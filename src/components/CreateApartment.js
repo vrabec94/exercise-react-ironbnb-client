@@ -1,11 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function CreateApartment() {
 
     const [title, setTitle] = useState("");
     const [imgURL, setImgURL] = useState("");
     const [pricePerDay, setPricePerDay] = useState(0);
+
+    const navigate = useNavigate();
 
     const url = "https://ironbnb-m3.herokuapp.com/apartments"
 
@@ -18,12 +21,13 @@ function CreateApartment() {
         };
         axios.post(url, newApartment)
           .then(function (response) {
-            console.log(response);
+            navigate("/apartments");
+            console.log("added " + newApartment.title + " to Database");
           })
           .catch(function (error) {
             console.log(error);
           });
-          
+
         setImgURL("");
         setTitle("");
         setPricePerDay(0);

@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+
 
 function ApartmentsList(){
 
@@ -32,8 +32,9 @@ function ApartmentsList(){
                 : apartmentArray.map((apartmentDetails, index) => {
                     return (
                         <div className="character" key={apartmentDetails._id} >
+                            <img src={apartmentDetails.img} alt="apartment"></img>
                             <h2>{apartmentDetails.title}</h2>
-                            {/*<Link to={"/characters/" + apartmentDetails.id}>More Details</Link>*/}
+                            {/*<Link to={"/apartments/" + apartmentDetails.id}>More Details</Link>*/}
                         </div>
                     )
                 })}
