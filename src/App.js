@@ -8,6 +8,7 @@ import ApartmentDetails from "./components/ApartmentDetails";
 import CreateApartment from "./components/CreateApartment";
 
 function App() {
+
   return (
     <div className="App">
       <NavBar />
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/apartments" element={<ApartmentsList />} />
-        <Route path="/apartments/create" element={<CreateApartment />} />
+        <Route path="/apartments/create" element={<CreateApartment/>} />
         <Route path="/apartments/:apartmentId" element={<ApartmentDetails />} />
       </Routes>
     </div>
